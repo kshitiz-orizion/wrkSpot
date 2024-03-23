@@ -14,31 +14,33 @@ const Table = ({data, loading}) => {
     const columns = [
         columnHelper.accessor("name", {
           header: () => "Country Name",
-          cell: (info) => info.getValue(),
+          cell: (info) => info.getValue() || 'N/A',
         }),
         columnHelper.accessor("abbreviation", {
           id: "code",
-          cell: (info) => <i>{info.getValue()}</i>,
+          cell: (info) => <i>{info.getValue() || 'N/A'}</i>,
           header: () => <span>Code</span>,
         }),
         columnHelper.accessor("capital", {
           header: () => "Capital",
-          cell: (info) => info.renderValue(),
+          cell: (info) => info.renderValue() || 'N/A',
         }),
         columnHelper.accessor("phone", {
           header: () => "Ph Code",
+          cell: (info) => info.renderValue() || 'N/A'
         }),
         columnHelper.accessor("population", {
           header: "Population",
+          cell: (info) => info.renderValue() || 'N/A'
         }),
         columnHelper.accessor("media", {
           header: "Flag",
           cell: (info) => {
             return (
               <img
-                style={{ height: "20px", width: "20px" }}
+                className="flag"
                 src={info.renderValue()?.flag}
-                alt={""}
+                alt={"N/A"}
               />
             );
           },
@@ -48,9 +50,9 @@ const Table = ({data, loading}) => {
           cell: (info) => {
             return (
               <img
-                style={{ height: "20px", width: "20px" }}
+                className="flag"
                 src={info.renderValue()?.emblem}
-                alt={""}
+                alt={"N/A"}
               />
             );
           },

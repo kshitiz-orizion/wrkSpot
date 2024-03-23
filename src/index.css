@@ -40,6 +40,7 @@ th, td {
 }
 
 button{
+  margin-left:0.5rem;
   background-color: #6558F5;
   color:white;
   border-radius: 5px;
@@ -117,4 +118,9 @@ tr{
 h3{
   text-align: left;
   margin: 2rem 0 1rem 0.5rem;
+}
+
+.flag{
+  width:2rem;
+  height: 2rem;
 }
