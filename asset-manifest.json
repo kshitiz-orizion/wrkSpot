@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/wrkSpot/static/css/main.99a02e10.css",
-    "main.js": "/wrkSpot/static/js/main.7a31a651.js",
+    "main.css": "/wrkSpot/static/css/main.9101247e.css",
+    "main.js": "/wrkSpot/static/js/main.e49177d0.js",
     "static/js/453.0469a8c1.chunk.js": "/wrkSpot/static/js/453.0469a8c1.chunk.js",
     "index.html": "/wrkSpot/index.html",
-    "main.99a02e10.css.map": "/wrkSpot/static/css/main.99a02e10.css.map",
-    "main.7a31a651.js.map": "/wrkSpot/static/js/main.7a31a651.js.map",
+    "main.9101247e.css.map": "/wrkSpot/static/css/main.9101247e.css.map",
+    "main.e49177d0.js.map": "/wrkSpot/static/js/main.e49177d0.js.map",
     "453.0469a8c1.chunk.js.map": "/wrkSpot/static/js/453.0469a8c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.99a02e10.css",
-    "static/js/main.7a31a651.js"
+    "static/css/main.9101247e.css",
+    "static/js/main.e49177d0.js"
   ]
 }
