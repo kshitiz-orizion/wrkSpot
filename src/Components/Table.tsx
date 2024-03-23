@@ -7,7 +7,7 @@ import {
   } from "@tanstack/react-table";
 import { Country } from "../App";
 
-const Table = ({data}) => {
+const Table = ({data, loading}) => {
 
     const columnHelper = createColumnHelper<Country>();
 
@@ -82,6 +82,9 @@ const Table = ({data}) => {
               </tr>
             ))}
           </thead>
+          {loading ? 
+          <h2>Loading.....</h2>
+          :
           <tbody>
             {table.getRowModel().rows.map((row) => (
               <tr key={row.id}>
@@ -92,7 +95,7 @@ const Table = ({data}) => {
                 ))}
               </tr>
             ))}
-          </tbody>
+          </tbody>}
         </table>
       </div>
     )

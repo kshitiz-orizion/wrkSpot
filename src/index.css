@@ -59,6 +59,7 @@ button:active{
 .clear{
   color:#6558F5;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 section{

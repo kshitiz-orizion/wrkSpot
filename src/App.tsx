@@ -19,17 +19,23 @@ export type Country = {
 function App() {
   const [countries, setCountries] = useState<Array<Country>>([]);
   let allCountries= useRef([])
+  const [loading,setLoading] = useState(false)
+  const [inputText,setInputText] = useState('')
+  const [selected,setSelected] = useState('') 
 
 
   const fetchCountries = async () => {
+    setLoading(true)
     const data = await axios.get(
       "https://api.sampleapis.com/countries/countries"
     );
     setCountries(data.data);
     allCountries.current = data.data;
+    setLoading(false)
   };
 
   const filterByName = (e) =>{
+    setInputText(e.target.value)
     const data:Array<Country> = allCountries.current.filter((val:Country)=>{
       return val.name.toLowerCase().includes(e.target.value.toLowerCase())
     })
@@ -37,6 +43,7 @@ function App() {
   }
 
   const filterByPopulation = (e) =>{
+    setSelected(e.target.value)
     const data:Array<Country> = allCountries.current.filter((val:Country)=>{
       return val.population <= Number(e.target.value)
     })
@@ -44,6 +51,8 @@ function App() {
   }
 
   const clearResult = () =>{
+    setInputText('')
+    setSelected('')
     setCountries(allCountries.current)
   }
 
@@ -53,9 +62,9 @@ function App() {
       <div className="Container">
         <section>
         <div className="leftTags">
-          <input type="text" placeholder="Country Name" onChange={(e)=>filterByName(e)}/>
+          <input type="text" placeholder="Country Name" onChange={(e)=>filterByName(e)} value={inputText}/>
           <select onChange={(e)=>filterByPopulation(e)}>
-            <option selected disabled>
+            <option selected value=''>
               Population
             </option>
             <option value='1000000'> &lt; 1M</option>
@@ -68,7 +77,7 @@ function App() {
           <button onClick={() => fetchCountries()}>Show All Countries</button>
         </div>
         </section>
-        <Table data={countries}/>
+        <Table data={countries} loading={loading}/>
       </div>
 
     </div>
