@@ -11,3 +11,109 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+*{
+  box-sizing: border-box;
+}
+table {
+  display: block;
+  border-spacing: 0px;
+  width: 100%;
+  margin: 0.5rem 0.5rem;
+  /* border: 1px solid lightgray; */
+}
+
+tbody {
+  border-bottom: 0.05rem solid lightgray;
+}
+
+th, td {
+  border: 0.05rem solid lightgray;
+  border-right: 0.05rem solid lightgray;
+  padding:1rem;
+}
+
+.tableContainer{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+  background-color: #6558F5;
+  color:white;
+  border-radius: 5px;
+  border:none;
+  padding:0.5rem;
+  cursor: pointer;
+}
+
+button:hover{
+  opacity: 0.8;
+}
+
+button:active{
+  transform: scale(0.95);
+}
+
+.clear{
+  color:#6558F5;
+  text-decoration: underline;
+}
+
+section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.05rem 0.5rem 0.5rem;
+}
+
+.leftTags{
+  display: flex;
+  align-items: center;
+}
+
+input{
+  height: 30px;
+  width:40%;
+  border: 1px solid lightgray;
+  padding:10px;
+  min-width:100px;
+  margin-right:0.5rem;
+}
+
+select{
+  height: 30px;
+  width:40%;
+  min-width:100px;
+  border: 1px solid lightgray;
+  padding:5px;
+  margin-right:0.5rem;
+}
+
+option:nth-child(1){
+  color: lightgray;
+}
+
+th, td{
+  width: calc(100% / 7);
+  display: inline-block;
+  min-width: 100px;
+}
+
+thead, tbody{
+  display: block;
+}
+
+thead, tr{
+  width:100%;
+}
+
+tr{
+  display: flex;
+}
+
+h3{
+  text-align: left;
+  margin: 2rem 0 1rem 0.5rem;
+}
