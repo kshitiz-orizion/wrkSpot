@@ -1,7 +1,6 @@
-import logo from "./logo.svg";
-import "./App.css";
-import axios from "axios";
 import React, { useRef, useState } from "react";
+import axios from "axios";
+import "./App.css";
 import Table from "./Components/Table";
 
 export type Country = {
@@ -63,7 +62,7 @@ function App() {
         <section>
         <div className="leftTags">
           <input type="text" placeholder="Country Name" onChange={(e)=>filterByName(e)} value={inputText}/>
-          <select onChange={(e)=>filterByPopulation(e)}>
+          <select onChange={(e)=>filterByPopulation(e)} value={selected}>
             <option selected value=''>
               Population
             </option>
